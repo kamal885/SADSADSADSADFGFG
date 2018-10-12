@@ -18,10 +18,9 @@ npm install simple-youtube-api
 npm install queue
 */
 
-
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(` Only DaHoM. `,"http://twitch.tv/S-F")
+client.user.setGame(` Only DaHoM `,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -238,8 +237,8 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`start playing : **${song.title}**`);
 }
 
-const adminprefix = "-*";
-const devs = ['487727064192122880'];
+const adminprefix = "$vip";
+const devs = ['274923685985386496'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -269,14 +268,14 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed()
       .setColor("#000000")
       .setDescription(`
-D-play ⇏ لتشغيل أغنية برابط أو بأسم
-D-skip ⇏ لتجاوز الأغنية الحالية
-D-pause ⇏ ايقاف الأغنية مؤقتا
-D-resume ⇏ لمواصلة الإغنية بعد ايقافها مؤقتا
-D-vol ⇏ لتغيير درجة الصوت 100 - 0
-D-stop ⇏ لإخرآج البوت من الروم
-D-np ⇏ لمعرفة الأغنية المشغلة حاليا
-D-queue ⇏ لمعرفة قائمة التشغيل
+6play ⇏ لتشغيل أغنية برابط أو بأسم
+6skip ⇏ لتجاوز الأغنية الحالية
+6pause ⇏ ايقاف الأغنية مؤقتا
+6resume ⇏ لمواصلة الإغنية بعد ايقافها مؤقتا
+6vol ⇏ لتغيير درجة الصوت 100 - 0
+6stop ⇏ لإخرآج البوت من الروم
+6np ⇏ لمعرفة الأغنية المشغلة حاليا
+6queue ⇏ لمعرفة قائمة التشغيل
  `)
    message.channel.sendEmbed(embed)
     
@@ -284,4 +283,4 @@ D-queue ⇏ لمعرفة قائمة التشغيل
    }); 
    
 
-client.login('process.env.BOT_TOKEN');
+client.login(process.env.BOT_TOKEN);
